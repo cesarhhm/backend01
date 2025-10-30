@@ -27,7 +27,7 @@ public class TicketModel {
 	
 	@ManyToOne
     @JoinColumn(name = "idSoporte")
-    private UsuarioModel soporte;
+    private SoporteModel soporte;
 	
 	private int estadoTicket;
 	
@@ -38,7 +38,7 @@ public class TicketModel {
 	public TicketModel() {}
 
 	public TicketModel(int nroTicket, CategoriaModel categoria, String tituloTicket, String descTicket,
-			UsuarioModel usuario, int estadoTicket, LocalDateTime fechaCreacionTicket,
+			UsuarioModel usuario,SoporteModel soporte, int estadoTicket, LocalDateTime fechaCreacionTicket,
 			LocalDateTime fechaAsignacionTicket) {
 		super();
 		this.nroTicket = nroTicket;
@@ -46,6 +46,7 @@ public class TicketModel {
 		this.tituloTicket = tituloTicket;
 		this.descTicket = descTicket;
 		this.usuario = usuario;
+		this.soporte = soporte;
 		this.estadoTicket = estadoTicket;
 		this.fechaCreacionTicket = fechaCreacionTicket;
 		this.fechaAsignacionTicket = fechaAsignacionTicket;
@@ -99,6 +100,14 @@ public class TicketModel {
 		this.usuario = usuario;
 	}
 
+	public SoporteModel getSoporte() {
+		return soporte;
+	}
+
+	public void setSoporte(SoporteModel soporte) {
+		this.soporte = soporte;
+	}
+	
 	public int getEstadoTicket() {
 		return estadoTicket;
 	}
