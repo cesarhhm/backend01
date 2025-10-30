@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/ticket")
-
+@CrossOrigin(origins = "http://localhost:3001")
 public class TicketRest {
 
 	@Autowired
